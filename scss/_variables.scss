@@ -1,0 +1,22 @@
+//colors
+
+$Moderate-cyan: hsl(176, 50%, 47%);
+$Dark-cyan: hsl(176, 72%, 28%);
+$Black: hsl(0, 0%, 0%);
+$Dark-gray: hsl(0, 0%, 48%);
+$Light-gray:hsl(0, 0%, 18%);
+$White:#fff;
+
+//ui
+
+$background-btn-primary: $Moderate-cyan;
+$background-btn-secondary:$Light-gray;
+$background-btn-primary-hover:$Dark-cyan;
+
+$color-heading-main:$Black;
+$color-heading-accent:$Moderate-cyan;
+$color-body-text:$Dark-gray;
+$color-btn:$White;
+
+$border-primary:rgba(0, 0, 0, 0.15);
+$border-accent:$Moderate-cyan;

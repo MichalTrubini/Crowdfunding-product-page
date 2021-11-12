@@ -161,4 +161,14 @@ img {
 html {
   font-size: 62.5%;
 }
+
+body {
+  font-family: 'Commissioner', sans-serif;
+}
+
+p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+}
 /*# sourceMappingURL=style.css.map */
