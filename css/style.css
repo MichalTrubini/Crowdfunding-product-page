@@ -164,11 +164,357 @@ html {
 
 body {
   font-family: 'Commissioner', sans-serif;
+  background: #f2f2f2;
 }
 
 p {
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 2.4rem;
+  color: #7a7a7a;
+}
+
+h1, h2, h3 {
+  color: black;
+  font-weight: 700;
+}
+
+button {
+  color: #fff;
+  border-radius: 33.5px;
+  border: none;
+  background: #3cb4ac;
+  font-weight: 700;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-transition: 0.2s all linear;
+  transition: 0.2s all linear;
+  margin-right: 16px;
+  position: relative;
+  top: -4px;
+}
+
+input:checked {
+  outline: 6px solid #3cb4ac;
+  outline-offset: -15px;
+}
+
+.container {
+  padding: 0 2.4rem;
+}
+
+.header {
+  background: url(../images/image-hero-mobile.jpg) no-repeat, rgba(145, 145, 145, 0.5);
+  background-blend-mode: multiply;
+  background-size: 100%;
+  padding: 3.2rem 2.4rem 24.8rem;
+}
+
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.header__nav-submenu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  background: #fff;
+  border-radius: 0.8rem;
+}
+
+.header__nav-submenu-list li {
+  list-style: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 2.4rem 2.4rem;
+}
+
+.header__nav-submenu-list li:last-child {
+  border-bottom: none;
+  padding-left: 2.4rem;
+}
+
+.header__nav-submenu-list li a {
+  color: black;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+}
+
+.main {
+  position: relative;
+  top: -50px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.0497193);
+  margin-bottom: 2.4rem;
+}
+
+.card-introduction {
+  text-align: center;
+  padding: 5.2rem 2.4rem 4rem;
+  position: relative;
+}
+
+.card-introduction__mastercraft-logo {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  top: -28px;
+}
+
+.card-introduction__heading {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  width: 80%;
+  margin: auto;
+}
+
+.card-introduction__paragraph {
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: #7a7a7a;
+  margin: 1.6rem 0 2.4rem;
+}
+
+.card-introduction__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-introduction__btn {
+  font-size: 1.6rem;
+  padding: 1.7rem 4.2rem 1.9rem;
+}
+
+.stats {
+  margin-top: 2.4rem;
+  text-align: center;
+  padding: 3.2rem 0 4rem;
+}
+
+.stats__total {
+  font-size: 3.2rem;
+  margin-bottom: 0.9rem;
+}
+
+.stats__divider {
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.15);
+  margin: 2.4rem auto;
+}
+
+.stats__progress-bar {
+  width: calc(100% - 48px);
+  margin: 3.2rem auto 0;
+  height: 12px;
+  border-radius: 33.5px;
+  background: rgba(46, 46, 46, 0.05);
+}
+
+.stats__progress-bar-current {
+  background: #3cb4ac;
+  width: 80%;
+  height: inherit;
+  border-radius: 33.5px;
+}
+
+.card-about {
+  margin-top: 2.4rem;
+  padding: 4rem 2.4rem;
+}
+
+.card-about__heading {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+}
+
+.card-about__paragraph {
+  margin-top: 2.4rem;
+}
+
+.card-about__wrapper {
+  margin-bottom: 3.5rem;
+}
+
+.card-about__subcard {
+  padding: 2.4rem;
+  font-size: 1.4rem;
+}
+
+.card-about__subcard:last-child {
+  margin-bottom: 0;
+}
+
+.card-about__subcard-heading {
+  line-height: 1.7rem;
+  margin-bottom: 0.8rem;
+}
+
+.card-about__subcard-subtitle {
+  color: #3cb4ac;
+  font-weight: 500;
+}
+
+.card-about__subcard-paragraph {
+  margin-top: 2.4rem;
+}
+
+.card-about__subcard-stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2.4rem;
+}
+
+.card-about__subcard-total {
+  font-size: 3.2rem;
+  margin-right: 0.8rem;
+}
+
+.card-about__subcard-stats-description {
+  font-size: 1.5rem;
+}
+
+.card-about__wrapper-btn {
+  margin-top: 2.4rem;
+}
+
+.card-about__subcard-btn {
+  padding: 1.5rem 3.3rem 1.6rem;
+  line-height: 1.7rem;
+  font-size: 1.4rem;
+}
+
+.card-about__subcard-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-about__subcard-intro {
+  padding: 3.6rem 2.4rem 3.2rem;
+}
+
+.card-about__user-input {
+  width: 100px;
+  height: 48px;
+  border-radius: 33.5px;
+  padding: 1.5em 2.4em;
+  top: 0;
+}
+
+.card-about__subcard-pledge {
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 0 2.4rem 2.4rem;
+}
+
+.card-about__subcard-form {
+  margin-top: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-about__subcard-btn-small {
+  padding: 1.5rem 2.6rem 1.6rem;
+}
+
+.card-out-of-stock {
+  opacity: 0.5;
+}
+
+.btn-out-of-stock {
+  background: rgba(47, 47, 47, 0.8);
+}
+
+.project-display {
+  padding: 3.2rem 2.4rem;
+}
+
+.project-display__heading {
+  font-size: 1.8rem;
+}
+
+.project-display__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2.4rem;
+}
+
+.project-display__paragraph {
+  margin-bottom: 2.4rem;
+}
+
+.response {
+  padding: 3.2rem 2.4rem 4rem;
+  text-align: center;
+}
+
+.response__heading {
+  font-size: 1.8rem;
+  margin: 2.4rem 0;
+}
+
+.response__paragraph {
+  margin-bottom: 3.1rem;
+}
+
+.response button {
+  padding: 1.5rem 3.3rem 1.6rem;
+  font-size: 1.4rem;
 }
 /*# sourceMappingURL=style.css.map */
