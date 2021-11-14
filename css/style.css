@@ -251,7 +251,7 @@ input:checked {
   padding-left: 2.4rem;
 }
 
-.header__nav-submenu-list li a {
+.header__nav-submenu-link {
   color: black;
   font-weight: 500;
   font-size: 1.8rem;
@@ -261,6 +261,8 @@ input:checked {
 .main {
   position: relative;
   top: -50px;
+  max-width: 73rem;
+  margin: auto;
 }
 
 .card {
@@ -302,9 +304,9 @@ input:checked {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -313,6 +315,11 @@ input:checked {
 .card-introduction__btn {
   font-size: 1.6rem;
   padding: 1.7rem 4.2rem 1.9rem;
+  margin-right: 0.9rem;
+}
+
+.card-introduction__bookmark-link span {
+  display: none;
 }
 
 .stats {
@@ -367,6 +374,12 @@ input:checked {
   margin-bottom: 3.5rem;
 }
 
+.card-about__subcard-input-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .card-about__subcard {
   padding: 2.4rem;
   font-size: 1.4rem;
@@ -386,7 +399,7 @@ input:checked {
   font-weight: 500;
 }
 
-.card-about__subcard-paragraph {
+.card-about__subcard-paragraph, .card-about__subcard-paragraph-pledge, .card-about__wrapper-stats-btn, .card-about__wrapper-btn, .card-about__subcard-stats-mb {
   margin-top: 2.4rem;
 }
 
@@ -400,7 +413,10 @@ input:checked {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 2.4rem;
+}
+
+.card-about__subcard-stats-dt {
+  display: none;
 }
 
 .card-about__subcard-total {
@@ -410,10 +426,6 @@ input:checked {
 
 .card-about__subcard-stats-description {
   font-size: 1.5rem;
-}
-
-.card-about__wrapper-btn {
-  margin-top: 2.4rem;
 }
 
 .card-about__subcard-btn {
@@ -502,6 +514,8 @@ input:checked {
 .response {
   padding: 3.2rem 2.4rem 4rem;
   text-align: center;
+  max-width: 54rem;
+  margin: auto;
 }
 
 .response__heading {
@@ -516,5 +530,200 @@ input:checked {
 .response button {
   padding: 1.5rem 3.3rem 1.6rem;
   font-size: 1.4rem;
+}
+
+@media screen and (min-width: 600px) {
+  .header {
+    background: url(../images//image-hero-desktop.jpg) no-repeat, rgba(145, 145, 145, 0.5);
+    background-blend-mode: multiply;
+    background-size: 100%;
+    padding-top: 4.8rem;
+    padding-bottom: 16vw;
+  }
+  .header__nav-hamburger {
+    display: none;
+  }
+  .header__nav {
+    width: 85%;
+    margin: auto;
+  }
+  .header__nav-submenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: static;
+    background: none;
+    width: auto;
+  }
+  .header__nav-submenu-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header__nav-submenu-list li {
+    padding: 0;
+    padding-left: 3.2rem;
+  }
+  .header__nav-submenu-link {
+    color: #fff;
+    font-size: 1.3rem;
+  }
+  input {
+    top: 4px;
+  }
+  .card-introduction, .project-display, .response, .card-about, .stats {
+    padding: 4.8rem;
+  }
+  .card .card-about__subcard {
+    padding: 3.3rem 2.8rem;
+  }
+  .card-introduction__btns {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .card-introduction__bookmark-link {
+    display: block;
+    padding: 1.7rem 2.4rem 1.9rem 7.2rem;
+    position: relative;
+    font-size: 1.6rem;
+    background: rgba(46, 46, 46, 0.05);
+    border-radius: 33.5px;
+    color: #7a7a7a;
+    font-weight: 700;
+  }
+  .card-introduction__bookmark {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .card-introduction__bookmark-link span {
+    display: inline-block;
+  }
+  .stats__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .stats__divider {
+    width: 1px;
+    height: 63px;
+    margin: auto;
+  }
+  .stats__progress-bar {
+    width: auto;
+  }
+  .card-about p {
+    font-size: 1.6rem;
+  }
+  .card-about__subcard {
+    padding: 3.8rem 3.2rem 3.2rem;
+  }
+  .card-about__subcard-intro {
+    padding: 3.3rem 2.8rem;
+  }
+  .card-about__wrapper-titles {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .card-about__subcard-heading {
+    margin-bottom: 0;
+    margin-right: 1.7rem;
+  }
+  .card-about__wrapper-stats-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .card-about__wrapper-btn {
+    margin-top: 0;
+  }
+  .card-about__subcard-input-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .card-about__subcard-heading, .card-about__subcard-subtitle {
+    line-height: 1.957rem;
+  }
+  .card-about__subcard-stats-mb {
+    display: none;
+  }
+  .card-about__subcard-stats-dt {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .card-about__subcard-input {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .card-about__subcard-total-dt {
+    font-size: 1.8rem;
+  }
+  .card-about__subcard-pledge {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 2.4rem 2.8rem;
+    font-size: 1.5rem;
+  }
+  .card-about__subcard-paragraph-pledge, .card-about__subcard-form {
+    margin: 0;
+  }
+  .card-about__subcard-paragraph-pledge {
+    font-size: 1.5rem;
+  }
+  .card-about__subcard-paragraph {
+    margin-left: 4rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  p {
+    line-height: 3rem;
+  }
+  .header {
+    max-width: 144rem;
+    margin: auto;
+    padding: 4.8rem 16.6rem 33rem;
+  }
+  .header__nav {
+    width: auto;
+  }
+  .card-introduction {
+    padding-top: 5.6rem;
+  }
+  .card-introduction__heading {
+    font-size: 2.8rem;
+  }
+  .card-introduction__paragraph {
+    margin: 1.5rem 0 4rem;
+    font-size: 1.6rem;
+  }
+  .stats__description {
+    font-size: 1.5rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

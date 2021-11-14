@@ -86,7 +86,7 @@ input {
         padding-left:2.4rem;
     }
 
-    &__nav-submenu-list li a {
+    &__nav-submenu-link {
         color:$color-menu-mb;
         font-weight: 500;
         font-size:1.8rem;
@@ -98,6 +98,8 @@ input {
 .main {
     position: relative;
     top:-50px;
+    max-width: 73rem;
+    margin: auto;
 }
 
 .card {
@@ -135,13 +137,18 @@ input {
 
     &__btns {
         display:flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
     }
 
     &__btn {
         font-size:1.6rem;
         padding:1.7rem 4.2rem 1.9rem;
+        margin-right:0.9rem;
+    }
+
+    &__bookmark-link span {
+        display:none;
     }
 }
 
@@ -196,6 +203,10 @@ input {
         margin-bottom:3.5rem;
     }
 
+    &__subcard-input-wrapper {
+        display: flex;
+    }
+
     &__subcard {
         padding:2.4rem;
         font-size: 1.4rem;
@@ -215,7 +226,7 @@ input {
         font-weight: 500;
     }
 
-    &__subcard-paragraph {
+    &__subcard-paragraph, &__subcard-paragraph-pledge, &__wrapper-stats-btn, &__wrapper-btn, &__subcard-stats-mb {
         margin-top:2.4rem;
     }
 
@@ -223,7 +234,10 @@ input {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        margin-top:2.4rem;
+    }
+
+    &__subcard-stats-dt {
+        display:none;
     }
 
     &__subcard-total {
@@ -233,10 +247,6 @@ input {
 
     &__subcard-stats-description {
         font-size: 1.5rem;
-    }
-
-    &__wrapper-btn {
-        margin-top:2.4rem;
     }
 
     &__subcard-btn {
@@ -310,6 +320,8 @@ input {
 .response {
     padding:3.2rem 2.4rem 4rem;
     text-align: center;
+    max-width:54rem;
+    margin: auto;
 
     &__heading {
         font-size: 1.8rem;
@@ -323,5 +335,218 @@ input {
     button {
         padding:1.5rem 3.3rem 1.6rem;
         font-size: 1.4rem;
+    }
+}
+
+@media screen and (min-width:600px) {
+
+    .header {
+        background:url(../images//image-hero-desktop.jpg) no-repeat, hsla(0, 0%, 57%, 0.5);
+        background-blend-mode: multiply;
+        background-size: 100%;
+        padding-top:4.8rem;
+        padding-bottom:16vw;
+
+        &__nav-hamburger {
+            display: none;
+        }
+
+        &__nav {
+            width: 85%;
+            margin:auto;
+        }
+
+        &__nav-submenu {
+            display: flex;
+            position: static;
+            background:none;
+            width:auto;
+        }
+
+        &__nav-submenu-list {
+            display: flex;
+        }
+
+        &__nav-submenu-list li {
+            padding:0;
+            padding-left:3.2rem;
+        }
+
+        &__nav-submenu-link {
+            color:#fff;
+            font-size: 1.3rem;
+        }
+    }
+
+    input {
+        top:4px;
+    }
+
+    .card-introduction, .project-display, .response, .card-about, .stats {
+        padding:4.8rem;
+    }
+
+    .card .card-about__subcard {
+        padding:3.3rem 2.8rem;
+    }
+
+    .card-introduction {
+        &__btns {
+            justify-content: space-between;
+        }
+
+        &__bookmark-link {
+            display: block;
+            padding:1.7rem 2.4rem 1.9rem 7.2rem;
+            position: relative;
+            font-size:1.6rem;
+            background:$background-bookmark;
+            border-radius:33.5px;
+            color:$color-body-text;
+            font-weight:700;
+        }
+
+        &__bookmark {
+            position:absolute;
+            left:0;
+            top:0;
+        }
+
+        &__bookmark-link span {
+            display:inline-block;
+        }
+    }
+
+    .stats {
+        &__wrapper {
+            display: flex;
+        }
+
+        &__divider {
+            width:1px;
+            height:63px;
+            margin:auto;
+        }
+
+        &__progress-bar {
+            width:auto;
+        }
+    }
+    .card-about {
+
+        p {
+            font-size: 1.6rem;
+        }
+
+        &__subcard {
+            padding:3.8rem 3.2rem 3.2rem;
+        }
+
+        &__subcard-intro {
+            padding:3.3rem 2.8rem;
+        }
+
+        &__wrapper-titles {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &__subcard-heading {
+            margin-bottom:0;
+            margin-right:1.7rem;
+        }
+
+        &__wrapper-stats-btn {
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &__wrapper-btn {
+            margin-top:0;
+        }
+
+        &__subcard-input-wrapper {
+            display: flex;
+        }
+
+        &__subcard-heading, &__subcard-subtitle {
+            line-height: 1.957rem;
+        }
+
+        &__subcard-stats-mb {
+            display:none;
+        }
+
+        &__subcard-stats-dt {
+            display: flex;
+        }
+
+        &__subcard-input {
+            justify-content: space-between;
+        }
+
+        &__subcard-total-dt {
+            font-size:1.8rem;
+        }
+
+        &__subcard-pledge {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:2.4rem 2.8rem;
+            font-size:1.5rem;
+        }
+
+        &__subcard-paragraph-pledge, &__subcard-form {
+            margin:0;
+        }
+
+        &__subcard-paragraph-pledge {
+            font-size:1.5rem;
+        }
+
+        &__subcard-paragraph {
+            margin-left:4rem;
+            font-size:1.5rem;
+        }
+    }
+}
+
+@media screen and (min-width:1440px) {
+
+    p {
+        line-height: 3rem;
+    }
+
+    .header {
+
+        max-width: 144rem;
+        margin:auto;
+        padding:4.8rem 16.6rem 33rem;
+
+        &__nav {
+            width:auto;
+        }
+    }
+
+    .card-introduction {
+        padding-top:5.6rem;
+
+        &__heading {
+            font-size:2.8rem;
+        }
+
+        &__paragraph {
+            margin:1.5rem 0 4rem;
+            font-size: 1.6rem;
+        }
+    }
+
+    .stats {
+        &__description {
+            font-size:1.5rem;
+        }
     }
 }
