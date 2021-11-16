@@ -55,3 +55,45 @@ function backProjectHide() {
     projectsElement.classList.remove('visible');
     overlayRemove();
 }
+
+//PLEDGE ROLL UP/DOWN
+
+let radioButton = document.querySelectorAll('.pledge-money');
+let pledgeHeading = document.querySelectorAll('.card-about__subcard-heading');
+
+pledgeHeading.forEach(pledgeSelect);
+radioButton.forEach(pledgeSelect);
+
+function pledgeSelect(item){
+
+    let dataAtrribute = item.getAttribute('data-select');
+    let pledgeThis = document.querySelector(`.pledge-active[data-select='${dataAtrribute}']`);
+
+    if (!pledgeThis) return;
+
+    item.addEventListener('click',pledgeRoll);
+
+    function pledgeRoll(){
+        let pledgePrevious = document.querySelector('.visible-pledge');
+        if (pledgePrevious) pledgePrevious.classList.remove('visible-pledge');
+        pledgeThis.classList.add('visible-pledge');
+
+    }
+}
+
+let pledgeNoMoney = document.querySelectorAll('.pledge-no-money');
+
+pledgeNoMoney.forEach(pledgeHideAll);
+
+function pledgeHideAll (item){
+
+    item.addEventListener('click',function(){
+            let pledgePrevious = document.querySelector('.visible-pledge');
+            if (pledgePrevious) pledgePrevious.classList.remove('visible-pledge');
+    })
+}
+
+
+//SLIDE DOWN ANIMATION
+
+

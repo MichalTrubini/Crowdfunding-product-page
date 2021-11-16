@@ -24,6 +24,7 @@ button {
     border:none;
     background:$background-btn-primary;
     font-weight: 700;
+    cursor:pointer;
 }
 
 input {
@@ -38,6 +39,7 @@ input {
     border: 1px solid rgba(0, 0, 0, 0.15);
     transition: 0.2s all linear;
     margin-right: 16px;
+    cursor: pointer;
   
     position: relative;
     top: -4px;
@@ -152,6 +154,10 @@ input {
         margin-right:0.9rem;
     }
 
+    &__btn:hover {
+        background:$background-btn-primary-hover;
+    }
+
     &__bookmark-link span {
         display:none;
     }
@@ -260,6 +266,10 @@ input {
         font-size:1.4rem;
     }
 
+    &__subcard-btn:hover {
+        background:$background-btn-primary-hover;
+    }
+
     &__subcard-input {
         display:flex;
         align-items: center;
@@ -270,17 +280,37 @@ input {
     }
 
     &__user-input {
+        position: relative;
         width:100px;
         height:48px;
         border-radius: 33.5px;
         padding:1.5em 2.4em;
         top:0;
+        color:$color-body-text;
+        outline:none;
+    }
+
+    &__user-input:focus {
+        border:1px solid $border-accent;
     }
 
     &__subcard-pledge {
+        display: none;
         text-align: center;
         border-top: 1px solid $border-primary;
         padding: 0 2.4rem 2.4rem;
+    }
+
+    &__subcard-form-wrapper {
+        position: relative;
+    }
+
+    &__subcard-form-currency {
+        position: absolute;
+        left:25px;
+        top:16px;
+        text-align: left;
+        color:$color-body-text;
     }
 
     &__subcard-form {
@@ -324,6 +354,11 @@ input {
 
     &__paragraph {
         margin-bottom:2.4rem;
+    }
+
+    &__cross {
+        cursor: pointer;
+        filter: invert(0%) sepia(95%) saturate(21%) hue-rotate(2deg) brightness(101%) contrast(107%);
     }
 }
 
@@ -471,6 +506,11 @@ input {
             margin-right:1.7rem;
         }
 
+        &__subcard-heading:hover {
+            color:$color-heading-accent;
+            cursor: pointer;
+        }
+
         &__wrapper-stats-btn {
             display:flex;
             align-items: center;
@@ -506,7 +546,7 @@ input {
         }
 
         &__subcard-pledge {
-            display: flex;
+            display: none;
             justify-content: space-between;
             align-items: center;
             padding:2.4rem 2.8rem;
@@ -569,9 +609,17 @@ input {
     display:block;
 }
 
+.visible-pledge {
+    display:flex;
+}
+
 .overlay {
     width: 100vw;
     background:hsla(0, 0%, 0%, 0.5);
     position:absolute;
     z-index: 2;
+}
+
+.btn-out-of-stock {
+    cursor:inherit;
 }

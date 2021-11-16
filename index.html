@@ -197,10 +197,12 @@
       <article class="card card-about__subcard card-about__subcard-intro">
         <div class="card-about__subcard-input">
           <div class="card-about__subcard-input-wrapper">
-            <input type="radio" id="huey" value="no-reward">
-            <h3 class="card-about__subcard-heading">
-              Pledge with no reward
-            </h3>
+            <input type="radio" id="option1" name="choice" data-select="1" class="pledge-no-money">
+            <label for="option1">
+              <h3 class="card-about__subcard-heading pledge-no-money"  data-select="1">
+                Pledge with no reward
+              </h3>
+            </label>
           </div>
         </div>
         <p class="card-about__subcard-paragraph">
@@ -211,12 +213,14 @@
       <article class="card">
         <div class="card-about__subcard">
           <div class="card-about__subcard-input">
-            <div class="card-about__subcard-input-wrapper">
-              <input type="radio" id="huey" value="no-reward">
+            <div class="card-about__subcard-input-wrapper ">
+              <input type="radio" id="option2" name="choice" data-select="2" class="pledge-money">
               <div class="card-about__wrapper-titles">
-                <h3 class="card-about__subcard-heading">
-                  Bamboo Stand
-                </h3>
+                <label for="option2">
+                  <h3 class="card-about__subcard-heading" data-select="2">
+                    Bamboo Stand
+                  </h3>
+                </label>
                 <p class="card-about__subcard-subtitle">
                   Pledge $25 or more
                 </p>  
@@ -245,12 +249,15 @@
           </div>
         </div>
         
-        <div class="card-about__subcard-pledge">
+        <div class="card-about__subcard-pledge pledge-active" data-select="2">
           <p class="card-about__subcard-paragraph-pledge">
             Enter your pledge
           </p>
           <form novalidate class="card-about__subcard-form">
-            <input type="text" placeholder="$" class="card-about__user-input">
+            <div class="card-about__subcard-form-wrapper">
+              <input type="number" min="0" class="card-about__user-input">
+              <div class="card-about__subcard-form-currency">$</div>
+            </div>
             <button class="card-about__subcard-btn card-about__subcard-btn-small">
               Continue
             </button>
@@ -266,11 +273,13 @@
         <div class="card-about__subcard">
           <div class="card-about__subcard-input">
             <div class="card-about__subcard-input-wrapper">
-              <input type="radio" id="huey" value="no-reward">
+              <input type="radio" id="option3" name="choice" data-select="3" class="pledge-money">
               <div class="card-about__wrapper-titles">
-                <h3 class="card-about__subcard-heading">
-                  Black Edition Stand
-                </h3>
+                <label for="option3">
+                  <h3 class="card-about__subcard-heading" data-select="3">
+                    Black Edition Stand
+                  </h3>
+                </label>
                 <p class="card-about__subcard-subtitle">
                   Pledge $75 or more
                 </p>  
@@ -299,12 +308,15 @@
           </div>
         </div>
         
-        <div class="card-about__subcard-pledge">
+        <div class="card-about__subcard-pledge pledge-active" data-select="3">
           <p class="card-about__subcard-paragraph-pledge">
             Enter your pledge
           </p>
           <form novalidate class="card-about__subcard-form">
-            <input type="text" placeholder="$" class="card-about__user-input">
+            <div class="card-about__subcard-form-wrapper">
+              <input type="number" min="0" class="card-about__user-input">
+              <div class="card-about__subcard-form-currency">$</div>
+            </div>
             <button class="card-about__subcard-btn card-about__subcard-btn-small">
               Continue
             </button>
@@ -319,11 +331,13 @@
         <div class="card-about__subcard">
           <div class="card-about__subcard-input">
             <div class="card-about__subcard-input-wrapper">
-              <input type="radio" class="radio-disabled">
+              <input type="radio" id="option4-disabled" name="choice" class="radio-disabled pledge-money" data-select="4">
               <div class="card-about__wrapper-titles">
-                <h3 class="card-about__subcard-heading">
-                  Mahogany Special Edition
-                </h3>
+                <label for="option4">
+                  <h3 class="card-about__subcard-heading" data-select="4">
+                    Mahogany Special Edition
+                  </h3>
+                </label>
                 <p class="card-about__subcard-subtitle">
                   Pledge $200 or more
                 </p>  
@@ -352,12 +366,15 @@
           </div>
         </div>
         
-        <div class="card-about__subcard-pledge">
+        <div class="card-about__subcard-pledge" data-select="4">
           <p class="card-about__subcard-paragraph-pledge">
             Enter your pledge
           </p>
           <form novalidate class="card-about__subcard-form">
-            <input type="text" placeholder="$" class="card-about__user-input">
+            <div class="card-about__subcard-form-wrapper">
+              <input type="number" min="0" class="card-about__user-input">
+              <div class="card-about__subcard-form-currency">$</div>
+            </div>
             <button class="card-about__subcard-btn card-about__subcard-btn-small">
               Continue
             </button>

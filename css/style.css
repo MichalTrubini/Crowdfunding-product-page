@@ -185,6 +185,7 @@ button {
   border: none;
   background: #3cb4ac;
   font-weight: 700;
+  cursor: pointer;
 }
 
 input {
@@ -198,6 +199,7 @@ input {
   -webkit-transition: 0.2s all linear;
   transition: 0.2s all linear;
   margin-right: 16px;
+  cursor: pointer;
   position: relative;
   top: -4px;
 }
@@ -323,6 +325,10 @@ input:checked {
   margin-right: 0.9rem;
 }
 
+.card-introduction__btn:hover {
+  background: #147b74;
+}
+
 .card-introduction__bookmark-link span {
   display: none;
 }
@@ -439,6 +445,10 @@ input:checked {
   font-size: 1.4rem;
 }
 
+.card-about__subcard-btn:hover {
+  background: #147b74;
+}
+
 .card-about__subcard-input {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -453,17 +463,37 @@ input:checked {
 }
 
 .card-about__user-input {
+  position: relative;
   width: 100px;
   height: 48px;
   border-radius: 33.5px;
   padding: 1.5em 2.4em;
   top: 0;
+  color: #7a7a7a;
+  outline: none;
+}
+
+.card-about__user-input:focus {
+  border: 1px solid #3cb4ac;
 }
 
 .card-about__subcard-pledge {
+  display: none;
   text-align: center;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   padding: 0 2.4rem 2.4rem;
+}
+
+.card-about__subcard-form-wrapper {
+  position: relative;
+}
+
+.card-about__subcard-form-currency {
+  position: absolute;
+  left: 25px;
+  top: 16px;
+  text-align: left;
+  color: #7a7a7a;
 }
 
 .card-about__subcard-form {
@@ -519,6 +549,12 @@ input:checked {
 
 .project-display__paragraph {
   margin-bottom: 2.4rem;
+}
+
+.project-display__cross {
+  cursor: pointer;
+  -webkit-filter: invert(0%) sepia(95%) saturate(21%) hue-rotate(2deg) brightness(101%) contrast(107%);
+          filter: invert(0%) sepia(95%) saturate(21%) hue-rotate(2deg) brightness(101%) contrast(107%);
 }
 
 .response {
@@ -651,6 +687,10 @@ input:checked {
     margin-bottom: 0;
     margin-right: 1.7rem;
   }
+  .card-about__subcard-heading:hover {
+    color: #3cb4ac;
+    cursor: pointer;
+  }
   .card-about__wrapper-stats-btn {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -690,9 +730,7 @@ input:checked {
     font-size: 1.8rem;
   }
   .card-about__subcard-pledge {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: none;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -745,10 +783,20 @@ input:checked {
   display: block;
 }
 
+.visible-pledge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .overlay {
   width: 100vw;
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
   z-index: 2;
+}
+
+.btn-out-of-stock {
+  cursor: inherit;
 }
 /*# sourceMappingURL=style.css.map */
