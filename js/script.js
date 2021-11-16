@@ -93,7 +93,12 @@ function pledgeHideAll (item){
     })
 }
 
+//LOCAL STORAGE INITIAL SET
 
-//SLIDE DOWN ANIMATION
+const backedAmount = parseInt(document.getElementById('backed').textContent.replace('$','').replace(',',''));
+const backers = parseInt(document.getElementById('backers').textContent.replace(',',''));
 
+localStorage.setItem('total_backed',backedAmount);
+localStorage.setItem('total_backers',backers);
 
+//LOCAL STORAGE UPDATE BY USER
