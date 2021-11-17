@@ -12,6 +12,12 @@ function overlayRemove () {
     overlay.style.height = 0 + 'px';
 }
 
+//COMMA DELIMITER FOR NUMBER
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 //MOBILE NAVIGATION MENU ON/OFF
 
 let hamburger = document.querySelector('.header__nav-hamburger');
@@ -95,10 +101,52 @@ function pledgeHideAll (item){
 
 //LOCAL STORAGE INITIAL SET
 
-const backedAmount = parseInt(document.getElementById('backed').textContent.replace('$','').replace(',',''));
-const backers = parseInt(document.getElementById('backers').textContent.replace(',',''));
+/* const backedAmount = parseInt(document.getElementById('backed').textContent.replace('$','').replace(',',''));
+const backers = parseInt(document.getElementById('backers').textContent.replace(',','')); */
+
+const backedAmount = 89914;
+const backers = 5007;
 
 localStorage.setItem('total_backed',backedAmount);
 localStorage.setItem('total_backers',backers);
 
-//LOCAL STORAGE UPDATE BY USER
+const backedUi = document.getElementById('backed');
+const backersUi = document.getElementById('backers');
+
+backedUi.innerText = '$' + numberWithCommas(localStorage.getItem('total_backed'));
+backersUi.innerText = numberWithCommas(localStorage.getItem('total_backers'));
+
+//LOCAL STORAGE UPDATED BY USER
+//PROGRESS BAR WIDTH UPDATE
+
+let inputButton = document.querySelectorAll('.card-about__subcard-btn-small');
+
+inputButton.forEach(buttonSubmit);
+
+function buttonSubmit(item){
+
+    item.addEventListener('click',storageUpdate);
+    item.addEventListener('click',progressBar);
+
+    function storageUpdate() {
+        let dataAtrribute = item.getAttribute('data-input');
+        let inputThis = parseInt(document.querySelector(`.card-about__user-input[data-input='${dataAtrribute}']`).value);
+
+        localStorage.setItem('total_backed',parseInt(localStorage.getItem('total_backed'))+inputThis);
+        localStorage.setItem('total_backers',parseInt(localStorage.getItem('total_backers'))+1);
+
+        backedUi.innerText = '$' + numberWithCommas(localStorage.getItem('total_backed'));
+        backersUi.innerText = numberWithCommas(localStorage.getItem('total_backers'));
+    }
+
+    function progressBar() {
+        const progressBar = document.querySelector('.stats__progress-bar-current');
+        const currentBacked = parseInt(localStorage.getItem('total_backed'));
+        const backedTarget = 100000;
+        
+        const currentBackedPercent = Math.round((currentBacked / backedTarget) *100) + '%';
+        console.log(currentBackedPercent);
+        
+        progressBar.style.width = currentBackedPercent;
+    }
+}

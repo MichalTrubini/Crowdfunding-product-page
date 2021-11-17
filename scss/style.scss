@@ -191,7 +191,8 @@ input {
 
     &__progress-bar-current {
         background:$background-progress-bar;
-        width:80%;
+        max-width: 100%;
+        width:90%;
         height:inherit;
         border-radius: 33.5px;
     }

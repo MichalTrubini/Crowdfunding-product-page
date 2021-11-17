@@ -362,7 +362,8 @@ input:checked {
 
 .stats__progress-bar-current {
   background: #3cb4ac;
-  width: 80%;
+  max-width: 100%;
+  width: 90%;
   height: inherit;
   border-radius: 33.5px;
 }
