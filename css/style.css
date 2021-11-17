@@ -563,6 +563,9 @@ input:checked {
   text-align: center;
   max-width: 54rem;
   margin: auto;
+  position: absolute;
+  z-index: 2;
+  display: none;
 }
 
 .response__heading {
@@ -577,6 +580,10 @@ input:checked {
 .response button {
   padding: 1.5rem 3.3rem 1.6rem;
   font-size: 1.4rem;
+}
+
+.response button:hover {
+  background: #147b74;
 }
 
 .radio-disabled {
@@ -688,7 +695,7 @@ input:checked {
     margin-bottom: 0;
     margin-right: 1.7rem;
   }
-  .card-about__subcard-heading:hover {
+  .card-about__subcard-heading-active:hover {
     color: #3cb4ac;
     cursor: pointer;
   }
@@ -751,6 +758,12 @@ input:checked {
     margin-left: 4rem;
     font-size: 1.5rem;
   }
+  .response {
+    top: 125px;
+    left: 35%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-28%, 0);
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -799,5 +812,39 @@ input:checked {
 
 .btn-out-of-stock {
   cursor: inherit;
+}
+
+.error-min-no-met {
+  font-weight: 700;
+  -webkit-animation: PULSE 2s infinite;
+          animation: PULSE 2s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes PULSE {
+  0% {
+    color: red;
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color: #3cb4ac;
+  }
+}
+
+/* Internet Explorer */
+
+/* Standard Syntax */
+@keyframes PULSE {
+  0% {
+    color: red;
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color: #3cb4ac;
+  }
 }
 /*# sourceMappingURL=style.css.map */

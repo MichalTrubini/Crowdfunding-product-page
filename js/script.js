@@ -62,7 +62,7 @@ function backProjectHide() {
     overlayRemove();
 }
 
-//PLEDGE ROLL UP/DOWN
+//PLEDGE ROLL ON/OFF
 
 let radioButton = document.querySelectorAll('.pledge-money');
 let pledgeHeading = document.querySelectorAll('.card-about__subcard-heading');
@@ -101,9 +101,6 @@ function pledgeHideAll (item){
 
 //LOCAL STORAGE INITIAL SET
 
-/* const backedAmount = parseInt(document.getElementById('backed').textContent.replace('$','').replace(',',''));
-const backers = parseInt(document.getElementById('backers').textContent.replace(',','')); */
-
 const backedAmount = 89914;
 const backers = 5007;
 
@@ -125,28 +122,93 @@ inputButton.forEach(buttonSubmit);
 
 function buttonSubmit(item){
 
+
+    item.addEventListener('click',checkInput);
     item.addEventListener('click',storageUpdate);
     item.addEventListener('click',progressBar);
+    item.addEventListener('click',projectHide);
+    item.addEventListener('click',pledgeClose);
+    item.addEventListener('click',showThankYou);
+
+    function checkInput() {
+        let dataAtrribute = item.getAttribute('data-input');
+        let inputThis = document.querySelector(`.card-about__user-input[data-input='${dataAtrribute}']`);
+        let inputThisMinAttribute = parseInt(inputThis.getAttribute('min'));
+        let inputThisValue = parseInt(inputThis.value);
+        let highlightSubtitle = document.querySelector(`.card-about__subcard-subtitle[data-input='${dataAtrribute}']`);
+
+        if (!inputThisValue || inputThisValue < inputThisMinAttribute) {
+            highlightSubtitle.classList.add('error-min-no-met');
+        }
+        else {
+            highlightSubtitle.classList.remove('error-min-no-met');
+        };
+
+        return !inputThisValue || inputThisValue < inputThisMinAttribute;
+    }
 
     function storageUpdate() {
-        let dataAtrribute = item.getAttribute('data-input');
-        let inputThis = parseInt(document.querySelector(`.card-about__user-input[data-input='${dataAtrribute}']`).value);
 
-        localStorage.setItem('total_backed',parseInt(localStorage.getItem('total_backed'))+inputThis);
+        if (checkInput() === true) return;
+
+        //SET LOCAL STORAGE
+
+        let dataAtrribute = item.getAttribute('data-input');
+        let inputThis = document.querySelector(`.card-about__user-input[data-input='${dataAtrribute}']`);
+        let inputThisValue = parseInt(inputThis.value);
+
+        localStorage.setItem('total_backed',parseInt(localStorage.getItem('total_backed'))+inputThisValue);
         localStorage.setItem('total_backers',parseInt(localStorage.getItem('total_backers'))+1);
+
+        //UPDATE THE CLIENT
 
         backedUi.innerText = '$' + numberWithCommas(localStorage.getItem('total_backed'));
         backersUi.innerText = numberWithCommas(localStorage.getItem('total_backers'));
+    }
+
+    function pledgeClose(){
+        let pledge = document.querySelector('.visible-pledge');
+        if (pledge) pledge.classList.remove('visible-pledge');
+    }
+
+    function projectHide() {
+        if (checkInput() === true) return;
+        backProjectHide();
     }
 
     function progressBar() {
         const progressBar = document.querySelector('.stats__progress-bar-current');
         const currentBacked = parseInt(localStorage.getItem('total_backed'));
         const backedTarget = 100000;
-        
         const currentBackedPercent = Math.round((currentBacked / backedTarget) *100) + '%';
-        console.log(currentBackedPercent);
-        
+
         progressBar.style.width = currentBackedPercent;
     }
+
+    //THANK YOU MESSAGE ON
+
+    function showThankYou() {
+
+        if (checkInput() === true) return;
+
+        let thankYouMessage = document.querySelector('.response');
+
+        thankYouMessage.classList.add('visible');
+        overlayAdd();
+    }
+
+}
+
+//THANK YOU MESSAGE OFF
+
+let thankYouButton = document.querySelector('.response button')
+
+thankYouButton.addEventListener('click',hideThankYou);
+
+function hideThankYou() {
+
+    let thankYouMessage = document.querySelector('.response');
+
+    thankYouMessage.classList.remove('visible');
+    overlayRemove();
 }

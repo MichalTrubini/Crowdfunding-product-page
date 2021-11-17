@@ -368,6 +368,9 @@ input {
     text-align: center;
     max-width:54rem;
     margin: auto;
+    position: absolute;
+    z-index: 2;
+    display: none;
 
     &__heading {
         font-size: 1.8rem;
@@ -381,6 +384,10 @@ input {
     button {
         padding:1.5rem 3.3rem 1.6rem;
         font-size: 1.4rem;
+    }
+
+    button:hover {
+        background:$background-btn-primary-hover;
     }
 }
 
@@ -507,7 +514,7 @@ input {
             margin-right:1.7rem;
         }
 
-        &__subcard-heading:hover {
+        &__subcard-heading-active:hover {
             color:$color-heading-accent;
             cursor: pointer;
         }
@@ -567,6 +574,14 @@ input {
             font-size:1.5rem;
         }
     }
+
+    .response {
+        
+        top: 125px;
+        left: 35%;
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-28%, 0);
+    }
 }
 
 @media screen and (min-width:1440px) {
@@ -624,3 +639,30 @@ input {
 .btn-out-of-stock {
     cursor:inherit;
 }
+
+.error-min-no-met {
+    font-weight: 700;
+    animation: PULSE 2s infinite; 
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes PULSE{
+    0%{color:rgb(255, 0, 0);}
+    50%{color:rgb(255, 0, 0);}
+    100%{color: #3cb4ac;}
+ }
+ 
+ /* Internet Explorer */
+ @-ms-keyframes PULSE{
+    0%{color:rgb(255, 0, 0);}	
+    50%{color:rgb(255, 0, 0);}
+    100%{color: #3cb4ac;}
+ }
+ 
+ /* Standard Syntax */
+ @keyframes PULSE{
+   0%{color:rgb(255, 0, 0);}
+   50%{color:rgb(255, 0, 0);}
+    100%{color: #3cb4ac;}
+ }
+ 
