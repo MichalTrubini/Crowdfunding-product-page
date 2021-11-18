@@ -231,6 +231,9 @@ input {
     &__subcard-heading {
         line-height:1.7rem;
         margin-bottom:0.8rem;
+        font-weight: 700;
+        color:$color-heading-main;
+        font-size: 1.4rem;
     }
 
     &__subcard-subtitle {
@@ -525,6 +528,7 @@ input {
         &__subcard-heading {
             margin-bottom:0;
             margin-right:1.7rem;
+            font-size: 1.8rem;
         }
 
         &__subcard-heading-active:hover {

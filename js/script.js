@@ -110,7 +110,6 @@ let pledgeNoMoney = document.querySelectorAll('.pledge-no-money');
 
 pledgeNoMoney.forEach(pledgeHideAll);
 
-
 function pledgeHideAll (item){
 
     item.addEventListener('click',function(){
@@ -124,7 +123,7 @@ function pledgeHideAll (item){
 
 //PLEDGE NO MONEY SUBMIT
 
-let pledgeNoMoneyHeading = document.querySelector('h3.pledge-no-money');
+let pledgeNoMoneyHeading = document.querySelector('.pledge-no-money');
 
 pledgeNoMoneyHeading.addEventListener('click',submitPledgeNoMoney);
 
@@ -139,6 +138,9 @@ function submitPledgeNoMoney() {
         let radioButton = document.querySelector('.pledge-no-money-radio');
         radioButton.checked = false;
 
+        let highlightedSubtitle = document.querySelector('.error-min-no-met');
+        if(!highlightedSubtitle) return;
+        highlightedSubtitle.classList.remove('error-min-no-met');
 }
 
 //LOCAL STORAGE INITIAL SET
