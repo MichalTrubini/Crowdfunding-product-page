@@ -84,6 +84,9 @@ function pledgeSelect(item){
         if (pledgePrevious) pledgePrevious.classList.remove('visible-pledge');
         pledgeThis.classList.add('visible-pledge');
 
+        let card = document.querySelector('.card-about__selected-card');
+        if (!card) return;
+        card.classList.remove('card-about__selected-card');
     }
 }
 
@@ -127,8 +130,8 @@ function buttonSubmit(item){
     item.addEventListener('click',storageUpdate);
     item.addEventListener('click',progressBar);
     item.addEventListener('click',projectHide);
-    item.addEventListener('click',pledgeClose);
-    item.addEventListener('click',showThankYou);
+    item.addEventListener('click',showThankYou);    
+    item.addEventListener('click',pledgeClearAndClose);
 
     function checkInput() {
         let dataAtrribute = item.getAttribute('data-input');
@@ -166,11 +169,6 @@ function buttonSubmit(item){
         backersUi.innerText = numberWithCommas(localStorage.getItem('total_backers'));
     }
 
-    function pledgeClose(){
-        let pledge = document.querySelector('.visible-pledge');
-        if (pledge) pledge.classList.remove('visible-pledge');
-    }
-
     function projectHide() {
         if (checkInput() === true) return;
         backProjectHide();
@@ -197,6 +195,46 @@ function buttonSubmit(item){
         overlayAdd();
     }
 
+    function pledgeClearAndClose(){
+
+        if (checkInput() === true) return;
+
+        let dataAtrribute = item.getAttribute('data-input');
+        let inputThis = document.querySelector(`.card-about__user-input[data-input='${dataAtrribute}']`);
+        
+        inputThis.value = null;
+
+        let pledge = document.querySelector('.visible-pledge');
+        if (pledge) pledge.classList.remove('visible-pledge');
+
+        let radioButton = document.querySelector('.pledge-money');
+
+        radioButton.checked = false;
+
+        let card = document.querySelector('.card-about__selected-card');
+        card.classList.remove('card-about__selected-card');
+    
+    }
+}
+
+//HIGHLIGHT SELECTED CARD
+
+let userInput = document.querySelectorAll('.card-about__user-input');
+
+userInput.forEach(selectedUserInput);
+
+function selectedUserInput(item) {
+
+    item.addEventListener('click',highlightCard);
+
+    function highlightCard () {
+
+    let dataAtrribute = item.getAttribute('data-highlight');
+    let card = document.querySelector(`.card[data-highlight='${dataAtrribute}']`);
+
+    card.classList.add('card-about__selected-card');
+
+    }
 }
 
 //THANK YOU MESSAGE OFF
