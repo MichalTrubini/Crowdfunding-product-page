@@ -104,7 +104,7 @@ input {
 
 .main {
     position: relative;
-    top:-50px;
+    top:-90px;
     max-width: 73rem;
     margin: auto;
 }
@@ -339,6 +339,10 @@ input {
     background:$background-btn-secondary;
 }
 
+.btn-out-of-stock:hover {
+    background:$background-btn-secondary;
+}
+
 .project-display {
     padding:3.2rem 2.4rem;
     position: absolute;
@@ -374,6 +378,9 @@ input {
     max-width:54rem;
     margin: auto;
     position: absolute;
+    top: -120px;
+    left: 13%;
+    transform: translate(-8%, 0);
     z-index: 2;
     display: none;
 
@@ -432,6 +439,7 @@ input {
         &__nav-submenu-list li {
             padding:0;
             padding-left:3.2rem;
+            border-bottom: none;
         }
 
         &__nav-submenu-link {
@@ -583,6 +591,10 @@ input {
         &__user-input {
             padding-left:2.4em;
             padding-right:1.8rem;
+        }
+
+        &__subcard-form-currency {
+            top:16px;
         }
     }
 

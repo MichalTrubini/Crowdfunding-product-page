@@ -267,7 +267,7 @@ input:checked {
 
 .main {
   position: relative;
-  top: -50px;
+  top: -90px;
   max-width: 73rem;
   margin: auto;
 }
@@ -530,6 +530,10 @@ input:checked {
   background: rgba(47, 47, 47, 0.8);
 }
 
+.btn-out-of-stock:hover {
+  background: rgba(47, 47, 47, 0.8);
+}
+
 .project-display {
   padding: 3.2rem 2.4rem;
   position: absolute;
@@ -572,6 +576,10 @@ input:checked {
   max-width: 54rem;
   margin: auto;
   position: absolute;
+  top: -120px;
+  left: 13%;
+  -webkit-transform: translate(-8%, 0);
+          transform: translate(-8%, 0);
   z-index: 2;
   display: none;
 }
@@ -629,6 +637,7 @@ input:checked {
   .header__nav-submenu-list li {
     padding: 0;
     padding-left: 3.2rem;
+    border-bottom: none;
   }
   .header__nav-submenu-link {
     color: #fff;
@@ -773,6 +782,9 @@ input:checked {
   .card-about__user-input {
     padding-left: 2.4em;
     padding-right: 1.8rem;
+  }
+  .card-about__subcard-form-currency {
+    top: 16px;
   }
   .response {
     top: 125px;

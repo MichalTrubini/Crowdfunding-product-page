@@ -62,6 +62,18 @@ function backProjectHide() {
     overlayRemove();
 }
 
+//USER SELECT REWARD BUTTON
+
+let rewardButton = document.querySelectorAll('.user_select_to_input');
+
+rewardButton.forEach(showBackProject);
+
+function showBackProject(item) {
+    item.addEventListener('click', function(){
+        backProjectDisplay();
+    })
+}
+
 //PLEDGE ROLL ON/OFF
 
 let radioButton = document.querySelectorAll('.pledge-money');
@@ -87,6 +99,10 @@ function pledgeSelect(item){
         let card = document.querySelector('.card-about__selected-card');
         if (!card) return;
         card.classList.remove('card-about__selected-card');
+
+        let highlightedSubtitle = document.querySelector('.error-min-no-met');
+        if (!highlightedSubtitle);
+        highlightedSubtitle.classList.remove('error-min-no-met');
     }
 }
 
@@ -94,12 +110,35 @@ let pledgeNoMoney = document.querySelectorAll('.pledge-no-money');
 
 pledgeNoMoney.forEach(pledgeHideAll);
 
+
 function pledgeHideAll (item){
 
     item.addEventListener('click',function(){
             let pledgePrevious = document.querySelector('.visible-pledge');
+            let selectedCard = document.querySelector('.card-about__selected-card');
+
             if (pledgePrevious) pledgePrevious.classList.remove('visible-pledge');
+            if (selectedCard) selectedCard.classList.remove('card-about__selected-card');
     })
+}
+
+//PLEDGE NO MONEY SUBMIT
+
+let pledgeNoMoneyHeading = document.querySelector('h3.pledge-no-money');
+
+pledgeNoMoneyHeading.addEventListener('click',submitPledgeNoMoney);
+
+function submitPledgeNoMoney() {
+
+        backProjectHide();
+        thankYou();
+        
+        localStorage.setItem('total_backers',parseInt(localStorage.getItem('total_backers'))+1);
+        backersUi.innerText = numberWithCommas(localStorage.getItem('total_backers'));
+
+        let radioButton = document.querySelector('.pledge-no-money-radio');
+        radioButton.checked = false;
+
 }
 
 //LOCAL STORAGE INITIAL SET
@@ -189,9 +228,7 @@ function buttonSubmit(item){
 
         if (checkInput() === true) return;
 
-        let thankYouMessage = document.querySelector('.response');
-
-        thankYouMessage.classList.add('visible');
+        thankYou();
         overlayAdd();
     }
 
@@ -207,13 +244,18 @@ function buttonSubmit(item){
         let pledge = document.querySelector('.visible-pledge');
         if (pledge) pledge.classList.remove('visible-pledge');
 
-        let radioButton = document.querySelector('.pledge-money');
+        let radioButton = document.querySelectorAll('.pledge-money');
 
-        radioButton.checked = false;
-
+        radioButton.forEach(function(item){
+            item.checked = false;
+        })
+        
         let card = document.querySelector('.card-about__selected-card');
         card.classList.remove('card-about__selected-card');
     
+        let highlightedSubtitle = document.querySelector('.error-min-no-met');
+        if(!highlightedSubtitle) return;
+        highlightedSubtitle.classList.remove('error-min-no-met');
     }
 }
 
@@ -235,6 +277,16 @@ function selectedUserInput(item) {
     card.classList.add('card-about__selected-card');
 
     }
+}
+
+//THANK YOU MESSAGE ON
+
+function thankYou() {
+
+    let thankYouMessage = document.querySelector('.response');
+
+    thankYouMessage.classList.add('visible');
+    overlayAdd();
 }
 
 //THANK YOU MESSAGE OFF
