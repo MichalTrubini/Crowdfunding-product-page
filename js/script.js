@@ -166,12 +166,11 @@ inputButton.forEach(buttonSubmit);
 
 function buttonSubmit(item){
 
-
     item.addEventListener('click',checkInput);
     item.addEventListener('click',storageUpdate);
     item.addEventListener('click',progressBar);
     item.addEventListener('click',projectHide);
-    item.addEventListener('click',showThankYou);    
+    item.addEventListener('click',showThankYou);
     item.addEventListener('click',pledgeClearAndClose);
 
     function checkInput() {
@@ -228,14 +227,16 @@ function buttonSubmit(item){
 
     function showThankYou() {
 
-        if (checkInput() === true) return;
+/*         if (checkInput() === true) return; */
 
-        thankYou();
+        let thankYouMessage = document.querySelector('.response');
+
+        thankYouMessage.classList.add('visible');
         overlayAdd();
     }
 
     function pledgeClearAndClose(){
-
+        
         if (checkInput() === true) return;
 
         let dataAtrribute = item.getAttribute('data-input');
